@@ -5,4 +5,4 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-Database.executeBatch(new BatchApex(),10);
+// Database.executeBatch(new BatchApex(),10);
