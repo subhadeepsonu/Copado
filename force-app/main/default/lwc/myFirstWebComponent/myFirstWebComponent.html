@@ -2,7 +2,7 @@
    <lightning-card title="ContactInformation" icon-name="custom:custom14">
       <div class="slds-m-around_medium">
          <template for:each={contacts} for:item="contact">
-            <div>
+            <div key={contact.Id}>
                {contact.Name}, {contact.Title}
             </div>
          </template>
