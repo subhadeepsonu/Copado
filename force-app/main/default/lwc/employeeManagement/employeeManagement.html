@@ -1,0 +1,20 @@
+<template>
+    <lightning-input onchange={handleSearch} type="text" label="Enter name to search" placeholder="Enter employee name you want to search" ></lightning-input>
+   
+        <lightning-input type="text"  onchange={handleChange} data-field="Name" label="Name" value={formData.Name} placeholder="Enter employee name" required=""></lightning-input>
+        <lightning-input type="email" label="Email" onchange={handleChange} data-field="Email__c" value={formData.Email__c} placeholder="Enter employee Mail" required></lightning-input>
+       <lightning-combobox
+                        label="Department"
+                        data-field="Department__c"
+                        value={formData.Department__c}
+                        options={departments}
+                        onchange={handleChange}
+                        required>
+                    </lightning-combobox>
+        <lightning-input type="date" value={formData.Joining_Date__c} data-field="Joining_Date__c"  onchange={handleChange} label="Employee Name" min={today} placeholder="Enter employee Joining Date" required></lightning-input>
+        <lightning-button disabled={validForm} label="Add Employee"  onclick={AddEmployee} variant="brand"></lightning-button>
+    <template if:true={employees}>
+       <lightning-datatable key-field="Id" data={employees} columns={columns}>
+       </lightning-datatable>
+    </template>
+</template>
